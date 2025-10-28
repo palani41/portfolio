@@ -1274,49 +1274,260 @@ transform: translateY(-5px);
 box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-/* ============ RESPONSIVE ============ */
+/* Add these responsive fixes to your style.css */
 
+/* Mobile devices (568px and below) */
 @media (max-width: 568px) {
-.hero-text h1 {
-font-size: 2rem;
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text .typed-text {
+    font-size: 1.2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .profile-placeholder {
+    width: 250px;
+    height: 250px;
+    font-size: 60px;
+  }
+
+  .about-info,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image-placeholder {
+    height: 300px;
+  }
+
+  .about-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .section-title h2 {
+    font-size: 1.8rem;
+  }
+
+  section {
+    padding: 4rem 1.5rem;
+  }
+
+  /* FIX: Contact Section Mobile */
+  .contact-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+  }
+
+  .contact-form {
+    padding: 2rem !important;
+  }
+
+  .contact-item {
+    padding: 1.5rem;
+  }
+
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .contact-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .contact-item p {
+    font-size: 0.9rem;
+  }
+
+  /* Fix form inputs on mobile */
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  /* Fix social links */
+  .social-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .social-link {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+
+  /* Fix project cards on mobile */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .project-links {
+    flex-direction: column;
+  }
+
+  .project-stat {
+    font-size: 0.85rem;
+  }
+
+  /* Fix timeline on mobile */
+  .timeline-item {
+    padding: 1.5rem;
+  }
+
+  .timeline-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .timeline-item h4 {
+    font-size: 0.95rem;
+  }
+
+  .timeline-item ul li {
+    font-size: 0.9rem;
+  }
+
+  /* Fix footer on mobile */
+  footer {
+    padding: 2rem 1rem;
+  }
+
+  footer h3 {
+    font-size: 1.5rem;
+  }
+
+  /* Fix scroll to top button */
+  .scroll-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
 }
 
-.hero-text .typed-text {
-font-size: 1.2rem;
+/* Tablet devices (569px to 968px) */
+@media (min-width: 569px) and (max-width: 968px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-form {
+    padding: 2.5rem;
+  }
 }
 
-.hero-buttons {
-flex-direction: column;
+/* Extra small devices (below 400px) */
+@media (max-width: 400px) {
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text .typed-text {
+    font-size: 1.1rem;
+  }
+
+  .profile-placeholder {
+    width: 220px;
+    height: 220px;
+    font-size: 50px;
+  }
+
+  .section-title h2 {
+    font-size: 1.6rem;
+  }
+
+  section {
+    padding: 3rem 1rem;
+  }
+
+  .about-image-placeholder {
+    height: 250px;
+  }
+
+  .stat-item {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .stat-item h3 {
+    font-size: 2rem;
+  }
+
+  .skill-category {
+    padding: 1.5rem;
+  }
+
+  .timeline {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-item {
+    padding: 1rem;
+  }
+
+  .project-card {
+    margin: 0 -0.5rem;
+  }
+
+  .project-content {
+    padding: 1.5rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem !important;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.8rem;
+  }
 }
 
-.profile-placeholder {
-width: 250px;
-height: 250px;
-font-size: 60px;
+/* Prevent horizontal scroll */
+body, html {
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
-.about-info,
-.stats-grid {
-grid-template-columns: 1fr;
+/* Fix container overflow */
+.nav-container,
+.hero-content,
+.about-content,
+.skills-grid,
+.timeline,
+.projects-grid,
+.cert-grid,
+.contact-content {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-.about-image-placeholder {
-height: 300px;
+/* Fix any text overflow */
+* {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-.about-text h3 {
-font-size: 1.5rem;
-}
-
-.about-text p {
-font-size: 1rem;
-}
-
-.section-title h2 {
-font-size: 1.8rem;
-}
-
-section {
-padding: 4rem 1.5rem;
-}
+/* Fix images */
+img {
+  max-width: 100%;
+  height: auto;
 }
